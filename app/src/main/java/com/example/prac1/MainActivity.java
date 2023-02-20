@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
+    private static final String TAG = "App";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, "Create", duration);
         toast.show();
+
+        Log.i(TAG, "onCreate info");
     }
 
     @Override
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, "Start", duration);
         toast.show();
+
+        Log.d(TAG, "onStart debug");
     }
 
     @Override
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, "Stop", duration);
         toast.show();
+
+        Log.v(TAG, "onStop verbose");
     }
 
     @Override
@@ -50,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, "Destroy", duration);
         toast.show();
+
+        Log.i(TAG, "onDestroy info");
     }
 
     @Override
@@ -60,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, "Pause", duration);
         toast.show();
+
+        Log.w(TAG, "onPause warning");
     }
 
     @Override
@@ -70,5 +80,7 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, "Resume", duration);
         toast.show();
+
+        Log.e(TAG, "onResume (error");
     }
 }
